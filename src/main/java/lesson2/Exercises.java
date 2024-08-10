@@ -38,15 +38,15 @@ public class Exercises {
     }
 
     public static boolean isNegative(int a) {
-        return a > 0;
+        return a < 0;
     }
 
     public static void printMultipleString(int repeats, String repeatingWord) {
-        for (int i = 0; i <= repeats; i++) System.out.println(repeatingWord);
+        for (int i = 0; i < repeats; i++) System.out.println(repeatingWord);
     }
 
     public static boolean isLeapYear(int year) {
-        return year % 4 == 0 || year % 400 == 0;
+        return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
     }
 
     public static int[] exercise10() {

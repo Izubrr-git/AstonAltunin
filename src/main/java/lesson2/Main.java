@@ -24,13 +24,13 @@ public class Main {
         printNegativeStatus(10);
 
         System.out.println("Задание №7:");
-        System.out.println(isNegative(10));
+        System.out.println(isNegative(-10));
 
         System.out.println("Задание №8:");
         printMultipleString(3, "Home");
 
         System.out.println("Задание №9:");
-        System.out.println(isLeapYear(2024));
+        System.out.println(isLeapYear(1800));
 
         System.out.println("Задание №10:");
         System.out.println(Arrays.toString(exercise10()));
