@@ -43,58 +43,28 @@ public class Main {
 
         //Задача 3
         System.out.println("Задача 3: ");
-        // Создаем парк
-        Park disneylandParis = new Park("Disneyland Paris", 1980, "Bd de Parc, 77700 Coupvray, France");
+        // Создаем экземпляр парка
+        Park disneyland = new Park();
 
-        // Создаем аттракционы
-        Map<DayOfWeek, TimeRange> defaultSchedule = new EnumMap<>(DayOfWeek.class);
-        for (DayOfWeek day : DayOfWeek.values()) {
-            defaultSchedule.put(day, new TimeRange(LocalTime.of(9, 0), LocalTime.of(22, 0)));
+        // Добавляем аттракционы
+        disneyland.addAttraction("Space Mountain", 50.0);
+        disneyland.addAttraction("Pirates of the Caribbean", 40.0);
+        disneyland.addAttraction("Haunted Mansion", 45.0);
+        disneyland.addAttraction("It's a Small World", 35.0);
+
+        // Получаем список названий аттракционов
+        List<String> attractionNames = disneyland.getAttractionNames();
+        System.out.println("Аттракционы в Disneyland:");
+        for (String name : attractionNames) {
+            System.out.println("- " + name);
         }
 
-        Park.Attraction bigThunderMountain = disneylandParis.new Attraction(
-                "Big Thunder Mountain",
-                new Date(),  // текущая дата как дата последнего обслуживания
-                8,  // минимальный возраст
-                1000,  // максимальное количество поездок до обслуживания
-                1992,  // год постройки
-                15,  // цена в USD
-                new HashMap<>(defaultSchedule),
-                AttractionType.ROLLER_COASTER,
-                80,  // длина в метрах
-                30   // ширина в метрах
-        );
-
-        Park.Attraction itsASmallWorld = disneylandParis.new Attraction(
-                "It's a Small World",
-                new Date(),
-                0,  // нет ограничений по возрасту
-                2000,
-                1992,
-                10,
-                new HashMap<>(defaultSchedule),
-                AttractionType.WATER_RIDE,
-                100,
-                40
-        );
-
-        // Добавляем аттракционы в парк
-        disneylandParis.addAttraction(bigThunderMountain);
-        disneylandParis.addAttraction(itsASmallWorld);
-
-        // Выводим информацию об аттракционе It's a Small World
-        List<Park.Attraction> attractions = disneylandParis.getAttractions();
-        for (Park.Attraction attraction : attractions) {
-            if (attraction.getName().equals("It's a Small World")) {
-                attraction.printInfo("basic");
-            }
+        // Получаем цены аттракционов
+        System.out.println("\nЦены на аттракционы:");
+        for (String name : attractionNames) {
+            double price = disneyland.getAttractionPrice(name);
+            System.out.println(name + ": $" + price);
         }
-
-        // Проверяем, открыт ли аттракцион в определенное время
-        LocalTime currentTime = LocalTime.of(14, 30);
-        DayOfWeek currentDay = DayOfWeek.MONDAY;
-        System.out.println("Big Thunder Mountain открыт в " + currentTime + " в " + currentDay + ": "
-                + bigThunderMountain.isOpenAt(currentDay, currentTime));
     }
 }
 
