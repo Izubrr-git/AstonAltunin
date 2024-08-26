@@ -9,10 +9,12 @@ import java.math.BigDecimal;
 public class Employee {
     String firstName = "Иван";
     String lastName = "Иванов";
-    int age = 25;
+
     String position = "Разработчик";
-    BigDecimal salary = BigDecimal.valueOf(50000);
     String email = "example@example.com";
+    BigDecimal salary = BigDecimal.valueOf(50000);
+    int age = 25;
+
 
     public Employee(String firstName, String lastName, int age, String position, BigDecimal salary, String email) throws InvalidEmailException, InvalidSalaryException {
         this.firstName = firstName;

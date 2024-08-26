@@ -7,11 +7,11 @@ public class Park {
     private List<Attraction> attractions;
 
     public Park() {
-        attractions = new ArrayList<>();
+        this.attractions = new ArrayList<>();
     }
 
     public void addAttraction(String name, double price) {
-        attractions.add(new Attraction(name, price));
+        attractions.add(new lesson6.Park.Attraction(name, price));
     }
 
     public List<String> getAttractionNames() {
