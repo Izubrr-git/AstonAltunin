@@ -1,50 +1,29 @@
 package lesson8;
 
-import lesson8.exceprions.MyArrayDataException;
-import lesson8.exceprions.MyArraySizeException;
+import lesson8.exceptions.MyArrayDataException;
+import lesson8.exceptions.MyArraySizeException;
 
-public class MatrixUtils  {
+import java.util.Arrays;
+
+public class MatrixUtils {
     // Объявляем переменную для размера массива (по ТЗ)
-    private static final int ARRAY_SIZE = 4;
+    private static final int MATRIX_SIZE = 4;
 
     private static void validateMatrixSize(String[][] matrix) throws MyArraySizeException {
-        // Проверка, что матрица 4x4
-        if (matrix.length != ARRAY_SIZE) {
-            throw new MyArraySizeException("Matrix columns count must by 4");
+        // Проверка, что матрица ARRAY_SIZE x ARRAY_SIZE
+        if (matrix.length != MATRIX_SIZE) {
+            throw new MyArraySizeException("Matrix columns count must by " + MATRIX_SIZE);
         }
 
-        if (matrix[0].length != ARRAY_SIZE) {
-            throw new MyArraySizeException("Matrix rows count must by 4");
-        }
-    }
-
-    public static String[][] transposeMatrix(String[][] matrix) throws MyArraySizeException {
-        validateMatrixSize(matrix);
-
-        // Определяем размеры исходной матрицы
-        int rows = matrix.length;
-        int cols = matrix[0].length;
-
-        // Создаем новую матрицу для хранения результата транспонирования
-        String[][] transposedMatrix = new String[cols][rows];
-
-        // Перебираем элементы исходной матрицы и заполняем новую
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                transposedMatrix[j][i] = matrix[i][j];
+        for (int i = 0; i < matrix.length; i++) {
+            if (matrix[i].length != MATRIX_SIZE) {
+                throw new MyArraySizeException("Matrix columns in " + i + " row must be " + MATRIX_SIZE);
             }
         }
-
-        return transposedMatrix;
     }
 
     public static void printMatrix(String[][] matrix) {
-        for (String[] values : matrix) {
-            for (String value : values) {
-                System.out.printf("%4s ", value);
-            }
-            System.out.println();
-        }
+        System.out.println(Arrays.deepToString(matrix));
     }
 
     public static int sumMatrix(String[][] matrix) throws MyArrayDataException, MyArraySizeException {
@@ -67,4 +46,24 @@ public class MatrixUtils  {
 
         return sum;
     }
+
+    //    public static String[][] transposeMatrix(String[][] matrix) throws MyArraySizeException {
+//        validateMatrixSize(matrix);
+//
+//        // Определяем размеры исходной матрицы
+//        int rows = matrix.length;
+//        int cols = matrix[0].length;
+//
+//        // Создаем новую матрицу для хранения результата транспонирования
+//        String[][] transposedMatrix = new String[cols][rows];
+//
+//        // Перебираем элементы исходной матрицы и заполняем новую
+//        for (int i = 0; i < rows; i++) {
+//            for (int j = 0; j < cols; j++) {
+//                transposedMatrix[j][i] = matrix[i][j];
+//            }
+//        }
+//
+//        return transposedMatrix;
+//    }
 }
