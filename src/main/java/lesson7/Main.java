@@ -33,6 +33,7 @@ public class Main {
         Cat[] cats = {cat1, cat2};
         for (Cat cat : cats) {
             cat.eat(bowl, 15);
+            System.out.println(bowl.getFood());;
         }
 
         System.out.println("\nСостояние сытости котов:");
