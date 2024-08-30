@@ -4,15 +4,22 @@ import lesson8.exceprions.MyArrayDataException;
 import lesson8.exceprions.MyArraySizeException;
 
 public class MatrixUtils  {
-    public static String[][] transposeMatrix(String[][] matrix) throws MyArraySizeException {
+    // Объявляем переменную для размера массива (по ТЗ)
+    private static final int ARRAY_SIZE = 4;
+
+    private static void validateMatrixSize(String[][] matrix) throws MyArraySizeException {
         // Проверка, что матрица 4x4
-        if (matrix.length != 4) {
+        if (matrix.length != ARRAY_SIZE) {
             throw new MyArraySizeException("Matrix columns count must by 4");
         }
 
-        if (matrix[0].length != 4) {
+        if (matrix[0].length != ARRAY_SIZE) {
             throw new MyArraySizeException("Matrix rows count must by 4");
         }
+    }
+
+    public static String[][] transposeMatrix(String[][] matrix) throws MyArraySizeException {
+        validateMatrixSize(matrix);
 
         // Определяем размеры исходной матрицы
         int rows = matrix.length;
@@ -41,10 +48,7 @@ public class MatrixUtils  {
     }
 
     public static int sumMatrix(String[][] matrix) throws MyArrayDataException, MyArraySizeException {
-        // Проверка, что матрица 4x4
-        if (matrix.length != 4 || matrix[0].length != 4) {
-            throw new MyArraySizeException("Matrix size must by 4x4");
-        }
+        validateMatrixSize(matrix);
 
         int sum = 0;
 
@@ -55,7 +59,7 @@ public class MatrixUtils  {
                     // Преобразуем строку в число
                     sum += Integer.parseInt(matrix[i][j]);
                 } catch (NumberFormatException e) {
-                    // Выбрасываем наше кастомное исключение с указанием ячейки
+                    // Выбрасываем исключение с указанием ячейки
                     throw new MyArrayDataException("Invalid data in cell: [" + i + "][" + j + "]");
                 }
             }
