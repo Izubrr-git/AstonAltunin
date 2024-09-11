@@ -1,5 +1,4 @@
-package lesson12_junit_5;
-
+import lesson12_junit_5.Factorial;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
