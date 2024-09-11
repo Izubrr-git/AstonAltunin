@@ -1,5 +1,4 @@
-package lesson12_testng;
-
+import lesson12_testng.Factorial;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
