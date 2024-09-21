@@ -15,7 +15,7 @@ public class Main {
         printColor();
 
         System.out.println("Задание №4:");
-        System.out.println(compareNumbers());
+        compareNumbers();
 
         System.out.println("Задание №5:");
         System.out.println(isSumInRange(5,10));
@@ -33,16 +33,16 @@ public class Main {
         System.out.println(isLeapYear(1800));
 
         System.out.println("Задание №10:");
-        System.out.println(Arrays.toString(exercise10()));
+        System.out.println(Arrays.toString(arrayRevers0and1()));
 
         System.out.println("Задание №11:");
-        System.out.println(Arrays.toString(exercise11()));
+        System.out.println(Arrays.toString(arrayFill1to100()));
 
         System.out.println("Задание №12:");
-        System.out.println(Arrays.toString(exercise12()));
+        System.out.println(Arrays.toString(arrayChangeByCondition()));
 
         System.out.println("Задание №13:");
-        System.out.println(Arrays.toString(exercise13()));
+        System.out.println(Arrays.deepToString(matrixDiagonal()));
 
         System.out.println("Задание №14:");
         System.out.println(Arrays.toString(fillArray(5,0)));
