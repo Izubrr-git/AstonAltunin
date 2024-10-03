@@ -42,26 +42,14 @@ public class HttpHelper {
         }
 
         // Выполняем запрос в зависимости от метода
-        Response response;
-        switch (method.toUpperCase()) {
-            case "GET":
-                response = request.when().get(endpoint);
-                break;
-            case "POST":
-                response = request.when().post(endpoint);
-                break;
-            case "PUT":
-                response = request.when().put(endpoint);
-                break;
-            case "PATCH":
-                response = request.when().patch(endpoint);
-                break;
-            case "DELETE":
-                response = request.when().delete(endpoint);
-                break;
-            default:
-                throw new UnsupportedOperationException("Unsupported HTTP method: " + method);
-        }
+        Response response = switch (method.toUpperCase()) {
+            case "GET" -> request.when().get(endpoint);
+            case "POST" -> request.when().post(endpoint);
+            case "PUT" -> request.when().put(endpoint);
+            case "PATCH" -> request.when().patch(endpoint);
+            case "DELETE" -> request.when().delete(endpoint);
+            default -> throw new UnsupportedOperationException("Unsupported HTTP method: " + method);
+        };
 
         return response;
     }
