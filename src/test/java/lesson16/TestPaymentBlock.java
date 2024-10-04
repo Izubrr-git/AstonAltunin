@@ -15,6 +15,7 @@ public class TestPaymentBlock extends BaseTest {
 
     @BeforeEach
     public void setUp() {
+        super.setUp();
         MTSMainPage = new MTSMainPage(driver);
         MTSMainPage.open();
         MTSMainPage.clickCookieButtonIfExists();
