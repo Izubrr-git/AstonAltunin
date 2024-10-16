@@ -46,24 +46,4 @@ public class MatrixUtils {
 
         return sum;
     }
-
-    //    public static String[][] transposeMatrix(String[][] matrix) throws MyArraySizeException {
-//        validateMatrixSize(matrix);
-//
-//        // Определяем размеры исходной матрицы
-//        int rows = matrix.length;
-//        int cols = matrix[0].length;
-//
-//        // Создаем новую матрицу для хранения результата транспонирования
-//        String[][] transposedMatrix = new String[cols][rows];
-//
-//        // Перебираем элементы исходной матрицы и заполняем новую
-//        for (int i = 0; i < rows; i++) {
-//            for (int j = 0; j < cols; j++) {
-//                transposedMatrix[j][i] = matrix[i][j];
-//            }
-//        }
-//
-//        return transposedMatrix;
-//    }
 }
