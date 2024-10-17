@@ -1,11 +1,9 @@
 package lesson_11;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-public class ArraysCalculator {
-    public static Set<String> getUniqueWords(String[] words) {
-        return new HashSet<>(Arrays.asList(words));
-    }
+public class UniqueWordsCalculator {
     public static Map<String, Integer> getWordCount(String[] words) {
         Map<String, Integer> wordCounts = new HashMap<>();
         for (String word : words) {

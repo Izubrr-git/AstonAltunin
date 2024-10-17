@@ -1,14 +1,15 @@
 package lesson_11;
 
+import java.util.Map;
+
 public class Main {
     public static void main(String[] args) {
         //Задание 1
         String[] words = {"Hi", "Hello", "Home", "Hello", "Hi", "Hi", "Hello", "Hello", "Hello", "Home"};
-        System.out.println("Задание 1: \n" +
-                ArraysCalculator.getUniqueWords(words) +
-                "\n" +
-                ArraysCalculator.getWordCount(words)
-        );
+        Map<String, Integer> wordCounts = UniqueWordsCalculator.getWordCount(words);
+        System.out.println("Задание 1: Уникальные слова и их количество");
+        System.out.println(wordCounts.keySet()); // Уникальные слова
+        System.out.println(wordCounts); // Количество каждого слова
 
         //Задание 2
         PhoneDictionary phoneDictionary = new PhoneDictionary();
