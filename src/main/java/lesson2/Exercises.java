@@ -80,7 +80,7 @@ public class Exercises {
     */
     public static void printNegativeStatus(int a) {
         if(a >= 0) System.out.println("Число положительное");
-        else System.out.println("Число положительное");
+        else System.out.println("Число отрицательное");
     }
 
     /*
@@ -121,9 +121,7 @@ public class Exercises {
     */
     public static int[] arrayRevers0and1() {
         int[] array = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-        for (int i = 0; i < array.length; i++) {
-            array[i] = 1 - array[i];
-        }
+        for (int i = 0; i < array.length; i++) array[i] = 1 - array[i];
         return array;
     }
 
