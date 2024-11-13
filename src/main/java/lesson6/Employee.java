@@ -7,13 +7,13 @@ import utility.exceptions.Validator;
 import java.math.BigDecimal;
 
 public class Employee {
-    String firstName = "Иван";
-    String lastName = "Иванов";
+    private String firstName = "Иван";
+    private String lastName = "Иванов";
 
-    String position = "Разработчик";
-    String email = "example@example.com";
-    BigDecimal salary = BigDecimal.valueOf(50000);
-    int age = 25;
+    private String position = "Разработчик";
+    private String email = "example@example.com";
+    private BigDecimal salary = BigDecimal.valueOf(50000);
+    private int age = 25;
 
 
     public Employee(String firstName, String lastName, int age, String position, BigDecimal salary, String email) throws InvalidEmailException, InvalidSalaryException {
