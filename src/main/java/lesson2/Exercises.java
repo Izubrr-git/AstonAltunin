@@ -159,14 +159,13 @@ public class Exercises {
      индексы таких элементов равны, то есть [0][0], [1][1], [2][2], ..., [n][n].
     */
     public static int[][] matrixDiagonal() {
-        int[][] matrix = new int[5][5];
-        for (int i = 0; i < matrix.length; i++) { // Итерация по строкам
-            for (int j = 0; j < matrix[i].length; j++) { // Итерация по столбцам
-                if (i == j || i + j == matrix.length - 1) matrix[i][j] = 1;
-                else matrix[i][j] = 0;
-            }
+        int[][] arr = new int[5][5];
+
+        for (int i = 0; i < 5; i++) {
+            arr[i][i] = 1;
         }
-        return matrix;
+
+        return arr;
     }
 
     /*
