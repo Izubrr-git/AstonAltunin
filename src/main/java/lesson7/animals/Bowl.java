@@ -8,7 +8,7 @@ public class Bowl {
     }
 
     public boolean decreaseFood(int decrement) {
-        if (food >= decrement) {
+        if (decrement <= food) {
             food -= decrement;
             return true;
         }
@@ -16,8 +16,12 @@ public class Bowl {
     }
 
     public void addFood(int amount) {
-        if (amount > 0) food += amount;
-        System.out.println("Добавлено " + amount + " единиц еды. Всего в миске: " + food);
+        if (amount > 0) {
+            food += amount;
+            System.out.println("Добавлено " + amount + " единиц еды. Всего в миске: " + food);
+        } else {
+            System.out.println("Нельзя добавить отрицательное количество еды в миску");
+        }
     }
 
     public int getFood() {
