@@ -1,7 +1,5 @@
 package lesson11_1;
 
-import lesson11_1.dwa.Student;
-
 import java.util.Iterator;
 import java.util.Set;
 

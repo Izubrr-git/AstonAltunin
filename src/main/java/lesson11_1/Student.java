@@ -1,4 +1,4 @@
-package lesson11_1.dwa;
+package lesson11_1;
 
 import java.util.ArrayList;
 import java.util.HashMap;
